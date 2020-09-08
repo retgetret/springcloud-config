@@ -1,0 +1,47 @@
+spring:
+  profiles:
+  active: dev
+  
+---
+server:
+  port: 8005
+  
+#spring的配置
+spring:
+  profiles: dev
+  application:
+    name: cloud-client
+    
+#eureka的配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka
+  instance:
+    instance-id: springcloud-client-8005
+    
+info:
+  app.name: springcloud-demo
+  company.name: yincf
+    
+---
+server:
+  port: 8004
+  
+#spring的配置
+spring:
+  profiles: test
+  application:
+    name: cloud-client
+    
+#eureka的配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka
+  instance:
+    instance-id: springcloud-client-8005
+    
+info:
+  app.name: springcloud-demo
+  company.name: yincf
